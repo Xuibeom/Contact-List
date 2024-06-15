@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 // import axios from "axios";
 import ContactRow from "./ContactRow";
 
+// The setSelectedContactId prop is passed into the ContactList component
 export default function ContactList({ setSelectedContactId }) {
   const dummyContacts = [
     { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
@@ -9,6 +10,7 @@ export default function ContactList({ setSelectedContactId }) {
     { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
   ];
 
+  // Fetches the list from the API. Commented out fetch request uses Axios for testing purposes.
   const [contacts, setContacts] = useState(dummyContacts);
   useEffect(() => {
     async function fetchContacts() {
@@ -52,6 +54,8 @@ export default function ContactList({ setSelectedContactId }) {
           <td>Phone</td>
         </tr>
         {contacts.map((contact) => {
+          // For each contact in the contacts array, a ContactRow component is rendered
+          // Passes the setSelectedContactId prop into ContactRow that allows a selected contact's id to be set in ContactRow
           return (
             <ContactRow
               key={contact.id}
