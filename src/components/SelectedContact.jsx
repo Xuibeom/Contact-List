@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function SelectedContact({ selectedContactId }) {
@@ -15,7 +15,7 @@ export default function SelectedContact({ selectedContactId }) {
       );
       setContact(response.data);
     }
-    // If there is a selectedContacteId then fetch the contact's information
+    // If there is a selectedContactId then fetch the contact's information
     if (selectedContactId) {
       fetchContact();
     }
